@@ -1,4 +1,4 @@
-package interfaces;
+package animals;
 
 public interface Fly {
 }

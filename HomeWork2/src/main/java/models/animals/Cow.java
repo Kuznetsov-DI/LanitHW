@@ -1,4 +1,8 @@
 package models.animals;
 
-public class Cow {
+import animals.Herbivore;
+import animals.Run;
+import animals.Voice;
+
+public class Cow extends Herbivore implements Voice, Run {
 }

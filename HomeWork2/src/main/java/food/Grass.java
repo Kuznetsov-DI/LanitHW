@@ -1,4 +1,4 @@
 package food;
 
-public class Grass {
+public class Grass extends Food{
 }
