@@ -17,12 +17,12 @@ public class Tiger extends Carnivorous implements Run, Swim, Voice {
 
     @Override
     public void run() {
-
+        System.out.println(super.getName() + " бежит!");
     }
 
     @Override
     public void swim() {
-
+        System.out.println(super.getName() + " плавает в пруду");
     }
 
     @Override

@@ -1,3 +1,5 @@
+import animals.Animal;
+import animals.Swim;
 import food.Grass;
 import food.Meat;
 import models.Worker;
@@ -15,6 +17,7 @@ public class Zoo {
         Fish fish = new Fish("Daysi", null);
         Hawk hawk = new Hawk("Killer", "Agrhck");
         Tiger tiger = new Tiger("Sharhan", "AgrRrrrRrrr");
+        Tiger tiger2 = new Tiger("Marusya", "AgrRrrrRrrr");
 
         Grass grass = new Grass("Chamomile", 3);
         Meat meat = new Meat("Veal", 7);
@@ -37,6 +40,9 @@ public class Zoo {
         worker.getVoice(hawk);
         worker.getVoice(tiger);
 
-
+        Swim[] pond = {tiger, elk, hawk, fish, tiger2};
+        for (int i = 0; i < pond.length; i++){
+            pond[i].swim();
+        }
     }
 }

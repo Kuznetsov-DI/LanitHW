@@ -1,8 +1,8 @@
 package models;
 
 import animals.Animal;
+import animals.Voice;
 import food.Food;
-import models.animals.*;
 
 public class Worker {
 
@@ -18,19 +18,5 @@ public class Worker {
         animal.eat(food);
     }
 
-    public void getVoice(Cow cow){
-        System.out.println(cow.voice());
-    }
-    public void getVoice(Duck duck){
-        System.out.println(duck.voice());
-    }
-    public void getVoice(Elk elk){
-        System.out.println(elk.voice());
-    }
-    public void getVoice(Hawk hawk){
-        System.out.println(hawk.voice());
-    }
-    public void getVoice(Tiger tiger){
-        System.out.println(tiger.voice());
-    }
+    public void getVoice(Voice voice) { System.out.println(voice.voice()); }
 }
