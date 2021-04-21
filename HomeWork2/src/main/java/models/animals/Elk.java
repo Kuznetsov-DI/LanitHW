@@ -1,12 +1,29 @@
 package models.animals;
 
-import animals.Herbivore;
-import animals.Fly;
-import animals.Run;
-import animals.Voice;
+import animals.*;
 
-public class Elk extends Herbivore implements Run, Fly, Voice {
+public class Elk extends Herbivore implements Run, Swim, Voice {
+
+    public Elk(String name, String sound) {
+        super(name, sound);
+    }
+
     protected Elk(String name, int levelHungry, String sound) {
         super(name, levelHungry, sound);
+    }
+
+    @Override
+    public void run() {
+
+    }
+
+    @Override
+    public void swim() {
+
+    }
+
+    @Override
+    public String voice() {
+        return super.getSound();
     }
 }
