@@ -26,6 +26,10 @@ public class Kotik {
         count++;
     }
 
+    public static int getCount() {
+        return count;
+    }
+
     public int getPrettiness() {
         return prettiness;
     }
@@ -47,54 +51,61 @@ public class Kotik {
         this.name = name;
         this.weight = weight;
         this.meow = meow;
+        this.levelSatiety = 0;
     }
 
     public boolean play() {
-        if (this.levelSatiety > 0) {
+        if (doesNotWantToEat()) {
             this.levelSatiety--;
             System.out.println(name + ", поиграл!");
             return true;
         } else {
+            System.out.println(name + ", хочет есть!");
             return false;
         }
     }
 
     public boolean sleep() {
-        if (this.levelSatiety > 0) {
+        if (doesNotWantToEat()) {
             this.levelSatiety--;
             System.out.println(name + ", поспал!");
             return true;
         } else {
+            System.out.println(name + ", хочет есть!");
             return false;
+        }
     }
 
     public boolean chaseMouse() {
-            if (this.levelSatiety > 0) {
-                this.levelSatiety--;
-                System.out.println(name + ", поймал мышь!");
-                return true;
-            } else {
-                return false;
+        if (doesNotWantToEat()) {
+            this.levelSatiety--;
+            System.out.println(name + ", поймал мышь!");
+            return true;
+        } else {
+            System.out.println(name + ", хочет есть!");
+            return false;
         }
     }
 
     public boolean run() {
-            if (this.levelSatiety > 0) {
-                this.levelSatiety--;
-                System.out.println(name + ", побегал!");
-                return true;
-            } else {
-                return false;
+        if (doesNotWantToEat()) {
+            this.levelSatiety--;
+            System.out.println(name + ", побегал!");
+            return true;
+        } else {
+            System.out.println(name + ", хочет есть!");
+            return false;
         }
     }
 
     public boolean destroy() {
-            if (this.levelSatiety > 0) {
-                this.levelSatiety--;
-                System.out.println(name + ", сломал!");
-                return true;
-            } else {
-                return false;
+        if (doesNotWantToEat()) {
+            this.levelSatiety--;
+            System.out.println(name + ", сломал!");
+            return true;
+        } else {
+            System.out.println(name + ", хочет есть!");
+            return false;
         }
     }
 
@@ -110,30 +121,43 @@ public class Kotik {
         eat(5, "Meat");
     }
 
+    public boolean doesNotWantToEat() {
+        if (this.levelSatiety != 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public void liveAnotherDay() {
-        for (int i = 0; i < 24; i++) {
+        int i = 1;
+        boolean check = false;
+        while (i < 24) {
+            if (check) {
+                i++;
+            }
             int random = (int) (Math.random() * 5 + 1);
-            if (levelSatiety > 0) {
+            if (doesNotWantToEat()) {
                 switch (random) {
                     case 1:
-                        play();
+                        check = play();
                         break;
                     case 2:
-                        sleep();
+                        check = sleep();
                         break;
                     case 3:
-                        chaseMouse();
+                        check = chaseMouse();
                         break;
                     case 4:
-                        run();
+                        check = run();
                         break;
                     case 5:
-                        destroy();
+                        check = destroy();
                         break;
                 }
             } else {
-                eat(5);
-                i--;
+                check = false;
+                eat();
             }
         }
     }
