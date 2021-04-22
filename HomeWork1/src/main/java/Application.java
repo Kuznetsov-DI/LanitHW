@@ -4,11 +4,13 @@ public class Application {
 
     public static void main(String[] args) {
 
-        Kotik kotik1 = new Kotik(3,"Barsik", 7, "Aaaa");
+        Kotik kotik1 = new Kotik(3, "Barsik", 7, "Aaaa");
         Kotik kotik2 = new Kotik();
-        kotik2.setKotik(9,"Kiska",3,"Myats");
+        kotik2.setKotik(9, "Kiska", 3, "Myats");
 
         kotik1.liveAnotherDay();
+
+        kotik2.sleep();
 
         System.out.println("Котика зовут - " + kotik1.getName());
         System.out.println("Котика весит - " + kotik1.getWeight() + " кг");

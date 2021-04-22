@@ -7,8 +7,8 @@ public class Kotik {
     private int weight;
     private String meow;
 
-    public static int count;
-    public static int levelSatiety;
+    private static int count;
+    private static int levelSatiety;
 
     public Kotik() {
         this.prettiness = 0;
@@ -49,62 +49,86 @@ public class Kotik {
         this.meow = meow;
     }
 
-    public boolean play(){
-        this.levelSatiety--;
-        System.out.println(name + ", поиграл!");
-        return true;
+    public boolean play() {
+        if (this.levelSatiety > 0) {
+            this.levelSatiety--;
+            System.out.println(name + ", поиграл!");
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public boolean sleep(){
-        this.levelSatiety--;
-        System.out.println(name + ", поспал!");
-        return true;
+    public boolean sleep() {
+        if (this.levelSatiety > 0) {
+            this.levelSatiety--;
+            System.out.println(name + ", поспал!");
+            return true;
+        } else {
+            return false;
     }
 
-    public boolean chaseMouse(){
-        this.levelSatiety--;
-        System.out.println(name + ", поймал мышь!");
-        return true;
+    public boolean chaseMouse() {
+            if (this.levelSatiety > 0) {
+                this.levelSatiety--;
+                System.out.println(name + ", поймал мышь!");
+                return true;
+            } else {
+                return false;
+        }
     }
 
-    public boolean run(){
-        this.levelSatiety--;
-        System.out.println(name + ", побегал!");
-        return true;
+    public boolean run() {
+            if (this.levelSatiety > 0) {
+                this.levelSatiety--;
+                System.out.println(name + ", побегал!");
+                return true;
+            } else {
+                return false;
+        }
     }
 
-    public boolean destroy(){
-        this.levelSatiety--;
-        System.out.println(name + ", сломал!");
-        return true;
+    public boolean destroy() {
+            if (this.levelSatiety > 0) {
+                this.levelSatiety--;
+                System.out.println(name + ", сломал!");
+                return true;
+            } else {
+                return false;
+        }
     }
 
-    public void eat(int countFood){
-        this.levelSatiety =+ countFood;
+    public void eat(int countFood) {
+        this.levelSatiety = +countFood;
     }
 
-    public void eat(int countFood, String nameFood){
-        this.levelSatiety =+ countFood;
+    public void eat(int countFood, String nameFood) {
+        this.levelSatiety = +countFood;
     }
 
-    public void eat(){
+    public void eat() {
         eat(5, "Meat");
     }
 
-    public void liveAnotherDay(){
+    public void liveAnotherDay() {
         for (int i = 0; i < 24; i++) {
-            int random = (int) (Math.random()*5 + 1);
-            if (levelSatiety > 0 ){
-                switch (random){
-                    case 1 : play();
+            int random = (int) (Math.random() * 5 + 1);
+            if (levelSatiety > 0) {
+                switch (random) {
+                    case 1:
+                        play();
                         break;
-                    case 2 : sleep();
+                    case 2:
+                        sleep();
                         break;
-                    case 3 : chaseMouse();
+                    case 3:
+                        chaseMouse();
                         break;
-                    case 4 : run();
+                    case 4:
+                        run();
                         break;
-                    case 5 : destroy();
+                    case 5:
+                        destroy();
                         break;
                 }
             } else {
