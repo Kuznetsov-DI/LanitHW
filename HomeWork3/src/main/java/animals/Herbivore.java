@@ -3,7 +3,7 @@ package animals;
 import food.Food;
 import food.Grass;
 
-public class Herbivore extends Animal{
+public abstract class Herbivore extends Animal{
 
     protected Herbivore(String name, String sound) {
         super(name, sound);

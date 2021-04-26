@@ -5,8 +5,9 @@ import food.Food;
 public abstract class Animal {
 
     final String name;
-    int levelHungry;
+    protected int levelHungry;
     final String sound;
+
 
     protected Animal(String name, String sound) {
         this.name = name;
