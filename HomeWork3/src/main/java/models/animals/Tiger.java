@@ -12,7 +12,7 @@ public class Tiger extends Carnivorous implements Run, Swim, Voice {
         super(name, sound, enclosureSize);
     }
 
-    public Tiger(String name, int levelHungry, String sound, String enclosureSize) {
+    public Tiger(String name, int levelHungry, String sound, EnclosureSize enclosureSize) {
         super(name, levelHungry, sound, enclosureSize);
     }
 

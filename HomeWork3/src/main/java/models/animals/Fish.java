@@ -11,7 +11,7 @@ public class Fish extends Carnivorous implements Swim {
         super(name, sound, enclosureSize);
     }
 
-    public Fish(String name, int levelHungry, String sound, String enclosureSize) {
+    public Fish(String name, int levelHungry, String sound, EnclosureSize enclosureSize) {
         super(name, levelHungry, sound, enclosureSize);
     }
 

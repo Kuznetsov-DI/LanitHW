@@ -11,7 +11,7 @@ public class Cow extends Herbivore implements Run, Voice {
         super(name, sound, enclosureSize);
     }
 
-    public Cow(String name, int levelHungry, String sound, String enclosureSize) {
+    public Cow(String name, int levelHungry, String sound, EnclosureSize enclosureSize) {
         super(name, levelHungry, sound, enclosureSize);
     }
 

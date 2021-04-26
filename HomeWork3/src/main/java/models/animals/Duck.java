@@ -13,7 +13,7 @@ public class Duck extends Herbivore implements Fly, Run, Swim, Voice {
         super(name, sound, enclosureSize);
     }
 
-    public Duck(String name, int levelHungry, String sound, String enclosureSize) {
+    public Duck(String name, int levelHungry, String sound, EnclosureSize enclosureSize) {
         super(name, levelHungry, sound, enclosureSize);
     }
 

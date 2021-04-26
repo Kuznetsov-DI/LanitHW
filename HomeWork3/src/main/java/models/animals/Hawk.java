@@ -13,7 +13,7 @@ public class Hawk extends Carnivorous implements Fly, Run, Swim, Voice {
         super(name, sound, enclosureSize);
     }
 
-    public Hawk(String name, int levelHungry, String sound, String enclosureSize) {
+    public Hawk(String name, int levelHungry, String sound, EnclosureSize enclosureSize) {
         super(name, levelHungry, sound, enclosureSize);
     }
 

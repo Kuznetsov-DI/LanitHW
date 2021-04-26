@@ -1,6 +1,7 @@
 import animals.Carnivorous;
 import animals.Herbivore;
 import enums.EnclosureSize;
+import exceptions.WrongEnclosureSize;
 import exceptions.WrongFoodException;
 import food.Grass;
 import food.Meat;
@@ -10,13 +11,14 @@ import models.animals.*;
 
 public class Zoo {
 
-    public static void main(String[] args) throws WrongFoodException {
+    public static void main(String[] args) throws WrongFoodException, WrongEnclosureSize {
 
         Worker worker = new Worker("Dimka", 5);
 
-        Cow cow = new Cow("Burenka","Muuu", EnclosureSize.large);
+        Cow cow = new Cow("Burenka","Muuu", EnclosureSize.middle);
         Duck duck = new Duck("Donald", "Crya",EnclosureSize.small);
         Elk elk = new Elk("Inokenti", "Moan", EnclosureSize.giant);
+        Elk elk2 = new Elk("Inokentisd", "Moan", EnclosureSize.large);
         Fish fish = new Fish("Daysi", null, EnclosureSize.small);
         Hawk hawk = new Hawk("Killer", "Agrhck", EnclosureSize.middle);
         Tiger tiger = new Tiger("Sharhan", "AgrRrrrRrrr", EnclosureSize.large);
@@ -38,8 +40,16 @@ public class Zoo {
         Aviary<Integer, Carnivorous> LargeAviaryWithPredators = new Aviary<>(EnclosureSize.large);
         Aviary<Integer, Carnivorous> SmallAviaryWithHerbivores = new Aviary<>(EnclosureSize.small);
         Aviary<Integer, Herbivore> GiantAviaryWithPredators = new Aviary<>(EnclosureSize.giant);
-        Aviary<Integer, Herbivore> MiddleAviaryWithHerbivores = new Aviary<>(EnclosureSize.large);
+        Aviary<Integer, Herbivore> MiddleAviaryWithHerbivores = new Aviary<>(EnclosureSize.middle);
 
+        LargeAviaryWithPredators.add(tiger);
+        MiddleAviaryWithHerbivores.add(cow);
+
+
+        LargeAviaryWithPredators.getAnimal("Sharhan");
+        LargeAviaryWithPredators.remove("Sharhan");
+        LargeAviaryWithPredators.getAnimal("Sharhan");
+        MiddleAviaryWithHerbivores.getAnimal("Burenka");
 
     }
 }

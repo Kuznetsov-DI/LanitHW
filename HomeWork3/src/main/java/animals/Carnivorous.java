@@ -12,7 +12,7 @@ public abstract class Carnivorous extends Animal {
         super(name, sound, enclosureSize);
     }
 
-    protected Carnivorous(String name, int levelHungry, String sound, String enclosureSize) {
+    protected Carnivorous(String name, int levelHungry, String sound, EnclosureSize enclosureSize) {
         super(name, levelHungry, sound, enclosureSize);
     }
 

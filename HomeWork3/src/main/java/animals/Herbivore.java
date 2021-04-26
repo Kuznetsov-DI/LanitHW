@@ -11,7 +11,7 @@ public abstract class Herbivore extends Animal{
         super(name, sound, enclosureSize);
     }
 
-    protected Herbivore(String name, int levelHungry, String sound, String enclosureSize) {
+    protected Herbivore(String name, int levelHungry, String sound, EnclosureSize enclosureSize) {
         super(name, levelHungry, sound, enclosureSize);
     }
 

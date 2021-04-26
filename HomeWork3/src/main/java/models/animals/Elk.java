@@ -9,7 +9,7 @@ public class Elk extends Herbivore implements Run, Swim, Voice {
         super(name, sound, enclosureSize);
     }
 
-    public Elk(String name, int levelHungry, String sound, String enclosureSize) {
+    public Elk(String name, int levelHungry, String sound, EnclosureSize enclosureSize) {
         super(name, levelHungry, sound, enclosureSize);
     }
 
