@@ -2,11 +2,12 @@ package models.animals;
 
 import animals.Carnivorous;
 import animals.Swim;
+import enums.EnclosureSize;
 
 public class Fish extends Carnivorous implements Swim {
 
 
-    public Fish(String name, String sound, String enclosureSize) {
+    public Fish(String name, String sound, EnclosureSize enclosureSize) {
         super(name, sound, enclosureSize);
     }
 

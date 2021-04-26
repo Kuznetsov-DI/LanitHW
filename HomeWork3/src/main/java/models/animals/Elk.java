@@ -1,10 +1,11 @@
 package models.animals;
 
 import animals.*;
+import enums.EnclosureSize;
 
 public class Elk extends Herbivore implements Run, Swim, Voice {
 
-    public Elk(String name, String sound, String enclosureSize) {
+    public Elk(String name, String sound, EnclosureSize enclosureSize) {
         super(name, sound, enclosureSize);
     }
 

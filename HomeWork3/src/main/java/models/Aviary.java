@@ -1,24 +1,31 @@
 package models;
 
 import animals.Animal;
+import animals.Carnivorous;
+import enums.EnclosureSize;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Aviary <k, v extends Animal> {
 
-    final int size;
+    private EnclosureSize enclossureSize;
+    private static int count;
 
-    public Aviary(int size) {
-        this.size = size;
+    public Aviary(EnclosureSize enclosureSize) {
+        this.enclossureSize = enclosureSize;
+        count++;
     }
 
-    enum enclosureSize { small, middle, large, giant}
+    private final Map<Integer, Animal> map = new HashMap<>();
 
-    private final Map<k, v> map = new HashMap<>();
-
-    public void add (Animal animal) {
-
+    public void add (Carnivorous carnivorous) {
+//        switch (enclosureSize) {
+//            case carnivorous.getEnclosureSize():
+//                map.put(count, carnivorous);
+//                break;
+//
+//        }
     }
 
     public void remove (String name) {

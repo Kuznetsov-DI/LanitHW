@@ -1,13 +1,13 @@
 package animals;
 
+import enums.EnclosureSize;
 import exceptions.WrongFoodException;
 import food.Food;
 import food.Grass;
-import food.Meat;
 
 public abstract class Herbivore extends Animal{
 
-    protected Herbivore(String name, String sound, String enclosureSize) {
+    protected Herbivore(String name, String sound, EnclosureSize enclosureSize) {
         super(name, sound, enclosureSize);
     }
 

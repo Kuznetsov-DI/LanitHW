@@ -5,10 +5,11 @@ import animals.Fly;
 import animals.Run;
 import animals.Swim;
 import animals.Voice;
+import enums.EnclosureSize;
 
 public class Duck extends Herbivore implements Fly, Run, Swim, Voice {
 
-    public Duck(String name, String sound, String enclosureSize) {
+    public Duck(String name, String sound, EnclosureSize enclosureSize) {
         super(name, sound, enclosureSize);
     }
 

@@ -1,5 +1,6 @@
 package animals;
 
+import enums.EnclosureSize;
 import exceptions.WrongFoodException;
 import food.Food;
 import food.Meat;
@@ -7,7 +8,7 @@ import food.Meat;
 public abstract class Carnivorous extends Animal {
 
 
-    protected Carnivorous(String name, String sound, String enclosureSize) {
+    protected Carnivorous(String name, String sound, EnclosureSize enclosureSize) {
         super(name, sound, enclosureSize);
     }
 

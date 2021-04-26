@@ -3,10 +3,11 @@ package models.animals;
 import animals.Herbivore;
 import animals.Run;
 import animals.Voice;
+import enums.EnclosureSize;
 
 public class Cow extends Herbivore implements Run, Voice {
 
-    public Cow(String name, String sound, String enclosureSize) {
+    public Cow(String name, String sound, EnclosureSize enclosureSize) {
         super(name, sound, enclosureSize);
     }
 
