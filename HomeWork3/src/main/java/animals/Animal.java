@@ -1,5 +1,6 @@
 package animals;
 
+import exceptions.WrongFoodException;
 import food.Food;
 
 public abstract class Animal {
@@ -40,7 +41,7 @@ public abstract class Animal {
         return enclosureSize;
     }
 
-    public void eat(Food food) {
+    public void eat(Food food) throws WrongFoodException {
     }
 
 }

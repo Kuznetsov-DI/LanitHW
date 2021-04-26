@@ -1,7 +1,9 @@
 package animals;
 
+import exceptions.WrongFoodException;
 import food.Food;
 import food.Grass;
+import food.Meat;
 
 public abstract class Herbivore extends Animal{
 
@@ -13,12 +15,8 @@ public abstract class Herbivore extends Animal{
         super(name, levelHungry, sound, enclosureSize);
     }
 
-    public void eat(Food food){
-        if (food instanceof Grass) {
-            levelHungry += food.getSaturation();
-        } else {
-            System.out.println("Травоядные не едят мясо!");
-        }
+    public void eat(Food food) throws WrongFoodException {
+        if (!(food instanceof Grass)) throw new WrongFoodException("Еда не подходит для травоядного!", food);
+        levelHungry += food.getSaturation();
     }
-
 }
