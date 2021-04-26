@@ -8,12 +8,12 @@ import animals.Voice;
 
 public class Duck extends Herbivore implements Fly, Run, Swim, Voice {
 
-    public Duck(String name, String sound) {
-        super(name, sound);
+    public Duck(String name, String sound, String enclosureSize) {
+        super(name, sound, enclosureSize);
     }
 
-    protected Duck(String name, int levelHungry, String sound) {
-        super(name, levelHungry, sound);
+    public Duck(String name, int levelHungry, String sound, String enclosureSize) {
+        super(name, levelHungry, sound, enclosureSize);
     }
 
     @Override

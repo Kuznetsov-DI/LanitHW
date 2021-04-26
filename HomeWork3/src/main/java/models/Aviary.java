@@ -7,7 +7,13 @@ import java.util.Map;
 
 public class Aviary <k, v extends Animal> {
 
-   // private enum enclosureSize { 10, 30, 60, 100}
+    final int size;
+
+    public Aviary(int size) {
+        this.size = size;
+    }
+
+    enum enclosureSize { small, middle, large, giant}
 
     private final Map<k, v> map = new HashMap<>();
 

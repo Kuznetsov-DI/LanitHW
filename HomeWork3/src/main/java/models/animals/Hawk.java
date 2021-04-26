@@ -8,12 +8,12 @@ import animals.Voice;
 
 public class Hawk extends Carnivorous implements Fly, Run, Swim, Voice {
 
-    public Hawk(String name, String sound) {
-        super(name, sound);
+    public Hawk(String name, String sound, String enclosureSize) {
+        super(name, sound, enclosureSize);
     }
 
-    protected Hawk(String name, int levelHungry, String sound) {
-        super(name, levelHungry, sound);
+    public Hawk(String name, int levelHungry, String sound, String enclosureSize) {
+        super(name, levelHungry, sound, enclosureSize);
     }
 
     @Override

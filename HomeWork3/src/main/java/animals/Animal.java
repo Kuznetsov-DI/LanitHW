@@ -7,18 +7,21 @@ public abstract class Animal {
     final String name;
     protected int levelHungry;
     final String sound;
+    final String enclosureSize;
 
 
-    protected Animal(String name, String sound) {
+    protected Animal(String name, String sound, String enclosureSize) {
         this.name = name;
+        this.enclosureSize = enclosureSize;
         this.levelHungry = 0;
         this.sound = sound;
     }
 
-    protected Animal(String name, int levelHungry, String sound) {
+    protected Animal(String name, int levelHungry, String sound, String enclosureSize) {
         this.name = name;
         this.levelHungry = levelHungry;
         this.sound = sound;
+        this.enclosureSize = enclosureSize;
     }
 
     public String getName() {
@@ -33,6 +36,11 @@ public abstract class Animal {
         return sound;
     }
 
-    public void eat(Food food){}
+    public String getEnclosureSize() {
+        return enclosureSize;
+    }
+
+    public void eat(Food food) {
+    }
 
 }

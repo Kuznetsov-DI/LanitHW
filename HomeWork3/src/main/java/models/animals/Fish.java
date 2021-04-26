@@ -3,14 +3,15 @@ package models.animals;
 import animals.Carnivorous;
 import animals.Swim;
 
-public class Fish extends Carnivorous implements Swim{
+public class Fish extends Carnivorous implements Swim {
 
-    public Fish(String name, String sound) {
-        super(name, sound);
+
+    public Fish(String name, String sound, String enclosureSize) {
+        super(name, sound, enclosureSize);
     }
 
-    protected Fish(String name, int levelHungry, String sound) {
-        super(name, levelHungry, sound);
+    public Fish(String name, int levelHungry, String sound, String enclosureSize) {
+        super(name, levelHungry, sound, enclosureSize);
     }
 
     @Override

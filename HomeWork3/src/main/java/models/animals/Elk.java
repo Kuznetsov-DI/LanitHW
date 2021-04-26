@@ -4,12 +4,12 @@ import animals.*;
 
 public class Elk extends Herbivore implements Run, Swim, Voice {
 
-    public Elk(String name, String sound) {
-        super(name, sound);
+    public Elk(String name, String sound, String enclosureSize) {
+        super(name, sound, enclosureSize);
     }
 
-    protected Elk(String name, int levelHungry, String sound) {
-        super(name, levelHungry, sound);
+    public Elk(String name, int levelHungry, String sound, String enclosureSize) {
+        super(name, levelHungry, sound, enclosureSize);
     }
 
     @Override

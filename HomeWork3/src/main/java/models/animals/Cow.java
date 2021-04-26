@@ -6,12 +6,12 @@ import animals.Voice;
 
 public class Cow extends Herbivore implements Run, Voice {
 
-    public Cow(String name, String sound) {
-        super(name, sound);
+    public Cow(String name, String sound, String enclosureSize) {
+        super(name, sound, enclosureSize);
     }
 
-    protected Cow(String name, int levelHungry, String sound) {
-        super(name, levelHungry, sound);
+    public Cow(String name, int levelHungry, String sound, String enclosureSize) {
+        super(name, levelHungry, sound, enclosureSize);
     }
 
     @Override

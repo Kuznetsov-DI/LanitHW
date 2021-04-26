@@ -6,12 +6,12 @@ import food.Meat;
 public abstract class Carnivorous extends Animal {
 
 
-    protected Carnivorous(String name, String sound) {
-        super(name, sound);
+    protected Carnivorous(String name, String sound, String enclosureSize) {
+        super(name, sound, enclosureSize);
     }
 
-    protected Carnivorous(String name, int levelHungry, String sound) {
-        super(name, levelHungry, sound);
+    protected Carnivorous(String name, int levelHungry, String sound, String enclosureSize) {
+        super(name, levelHungry, sound, enclosureSize);
     }
 
     public void eat(Food food){

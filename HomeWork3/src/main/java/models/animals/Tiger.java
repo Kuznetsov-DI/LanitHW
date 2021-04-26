@@ -7,12 +7,12 @@ import animals.Voice;
 
 public class Tiger extends Carnivorous implements Run, Swim, Voice {
 
-    public Tiger(String name, String sound) {
-        super(name, sound);
+    public Tiger(String name, String sound, String enclosureSize) {
+        super(name, sound, enclosureSize);
     }
 
-    protected Tiger(String name, int levelHungry, String sound) {
-        super(name, levelHungry, sound);
+    public Tiger(String name, int levelHungry, String sound, String enclosureSize) {
+        super(name, levelHungry, sound, enclosureSize);
     }
 
     @Override
