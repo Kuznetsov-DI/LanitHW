@@ -55,7 +55,7 @@ public class Kotik {
     }
 
     public boolean play() {
-        if (doesNotWantToEat()) {
+        if (isHungry()) {
             this.levelSatiety--;
             System.out.println(name + ", поиграл!");
             return true;
@@ -66,7 +66,7 @@ public class Kotik {
     }
 
     public boolean sleep() {
-        if (doesNotWantToEat()) {
+        if (isHungry()) {
             this.levelSatiety--;
             System.out.println(name + ", поспал!");
             return true;
@@ -77,7 +77,7 @@ public class Kotik {
     }
 
     public boolean chaseMouse() {
-        if (doesNotWantToEat()) {
+        if (isHungry()) {
             this.levelSatiety--;
             System.out.println(name + ", поймал мышь!");
             return true;
@@ -88,7 +88,7 @@ public class Kotik {
     }
 
     public boolean run() {
-        if (doesNotWantToEat()) {
+        if (isHungry()) {
             this.levelSatiety--;
             System.out.println(name + ", побегал!");
             return true;
@@ -99,7 +99,7 @@ public class Kotik {
     }
 
     public boolean destroy() {
-        if (doesNotWantToEat()) {
+        if (isHungry()) {
             this.levelSatiety--;
             System.out.println(name + ", сломал!");
             return true;
@@ -121,8 +121,8 @@ public class Kotik {
         eat(5, "Meat");
     }
 
-    public boolean doesNotWantToEat() {
-        if (this.levelSatiety != 0) {
+    public boolean isHungry() {
+        if (this.levelSatiety >= 0) {
             return true;
         } else {
             return false;
@@ -137,7 +137,7 @@ public class Kotik {
                 i++;
             }
             int random = (int) (Math.random() * 5 + 1);
-            if (doesNotWantToEat()) {
+            if (isHungry()) {
                 switch (random) {
                     case 1:
                         check = play();
