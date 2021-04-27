@@ -14,11 +14,11 @@ public class Herbivore extends Animal{
     }
 
     public void eat(Food food){
-        if (food instanceof Grass) {
-            levelHungry += food.getSaturation();
-        } else {
+        if (!(food instanceof Grass)) {
             System.out.println("Травоядные не едят мясо!");
+            return;
         }
+        levelHungry += food.getSaturation();
     }
 
 }

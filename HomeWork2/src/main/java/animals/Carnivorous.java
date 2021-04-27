@@ -14,12 +14,11 @@ public class Carnivorous extends Animal {
         super(name, levelHungry, sound);
     }
 
-    public void eat(Food food){
-       if (food instanceof Meat) {
-            levelHungry += food.getSaturation();
-       } else {
-           System.out.println("Хищники не едят траву!");
-       }
+    public void eat(Food food) {
+        if (!(food instanceof Meat)) {
+            System.out.println("Хищники не едят траву!");
+            return;
+        }
+        levelHungry += food.getSaturation();
     }
-
 }

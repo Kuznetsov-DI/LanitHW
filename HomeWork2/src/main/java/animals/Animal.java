@@ -5,7 +5,7 @@ import food.Food;
 public abstract class Animal {
 
     final String name;
-    int levelHungry;
+    protected int levelHungry;
     final String sound;
 
     protected Animal(String name, String sound) {
@@ -32,6 +32,6 @@ public abstract class Animal {
         return sound;
     }
 
-    public void eat(Food food){}
+    abstract void eat(Food food);
 
 }
