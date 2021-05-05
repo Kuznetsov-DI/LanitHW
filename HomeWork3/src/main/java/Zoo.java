@@ -44,12 +44,15 @@ public class Zoo {
 
         LargeAviaryWithPredators.add(tiger);
         MiddleAviaryWithHerbivores.add(cow);
+        MiddleAviaryWithHerbivores.add(duck);
+//        MiddleAviaryWithHerbivores.add(elk2);
 
 
         LargeAviaryWithPredators.getAnimal("Sharhan");
         LargeAviaryWithPredators.remove("Sharhan");
         LargeAviaryWithPredators.getAnimal("Sharhan");
         MiddleAviaryWithHerbivores.getAnimal("Burenka");
+        MiddleAviaryWithHerbivores.getAnimal("Donald");
 
     }
 }
