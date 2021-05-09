@@ -18,29 +18,9 @@ public class Aviary<V extends Animal>{
     private final Map<String, V> AviaryMap = new HashMap<>();
 
     public void add(V animal) throws WrongEnclosureSize {
-        switch (String.valueOf(animal.getEnclosureSize())){
-            case ("small"):
-                AviaryMap.put(animal.getName(), animal);
-                break;
-            case ("middle"):
-                if (enclosureSize.equals(EnclosureSize.small))
-                    throw new WrongEnclosureSize("Размер вольера не подходит для животного!", enclosureSize);
-                AviaryMap.put(animal.getName(), animal);
-                break;
-            case ("large"):
-                if (enclosureSize.equals(EnclosureSize.small)
-                        || enclosureSize.equals(EnclosureSize.middle))
-                    throw new WrongEnclosureSize("Размер вольера не подходит для животного!", enclosureSize);
-                AviaryMap.put(animal.getName(), animal);
-                break;
-            case ("giant"):
-                if (enclosureSize.equals(EnclosureSize.small)
-                        || enclosureSize.equals(EnclosureSize.middle)
-                        || enclosureSize.equals(EnclosureSize.large))
-                    throw new WrongEnclosureSize("Размер вольера не подходит для животного!", enclosureSize);
-                AviaryMap.put(animal.getName(), animal);
-                break;
-        }
+        if (animal.getEnclosureSize().ordinal() > enclosureSize.ordinal())
+            throw new WrongEnclosureSize("Размер вольера не подходит для животного!", enclosureSize);
+        AviaryMap.put(animal.getName(), animal);
     }
 
     public void remove (String name) {

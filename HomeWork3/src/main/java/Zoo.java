@@ -47,7 +47,6 @@ public class Zoo {
         MiddleAviaryWithHerbivores.add(duck);
 //        MiddleAviaryWithHerbivores.add(elk2);
 
-
         LargeAviaryWithPredators.getAnimal("Sharhan");
         LargeAviaryWithPredators.remove("Sharhan");
         LargeAviaryWithPredators.getAnimal("Sharhan");
