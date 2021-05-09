@@ -37,10 +37,10 @@ public class Zoo {
         System.out.println(tiger.getLevelHungry());
 //        worker.feed(tiger, grass);
 
-        Aviary<Integer, Carnivorous> LargeAviaryWithPredators = new Aviary<>(EnclosureSize.large);
-        Aviary<Integer, Carnivorous> SmallAviaryWithHerbivores = new Aviary<>(EnclosureSize.small);
-        Aviary<Integer, Herbivore> GiantAviaryWithPredators = new Aviary<>(EnclosureSize.giant);
-        Aviary<Integer, Herbivore> MiddleAviaryWithHerbivores = new Aviary<>(EnclosureSize.middle);
+        Aviary<Carnivorous> LargeAviaryWithPredators = new Aviary<>(EnclosureSize.large);
+        Aviary<Carnivorous> SmallAviaryWithHerbivores = new Aviary<>(EnclosureSize.small);
+        Aviary<Herbivore> GiantAviaryWithPredators = new Aviary<>(EnclosureSize.giant);
+        Aviary<Herbivore> MiddleAviaryWithHerbivores = new Aviary<>(EnclosureSize.middle);
 
         LargeAviaryWithPredators.add(tiger);
         MiddleAviaryWithHerbivores.add(cow);

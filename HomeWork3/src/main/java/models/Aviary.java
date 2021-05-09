@@ -6,14 +6,10 @@ import exceptions.WrongEnclosureSize;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
-public class Aviary<K, V extends Animal> extends HashMap {
+public class Aviary<V extends Animal>{
 
-    private EnclosureSize enclosureSize;
-    private K k;
-    private V v;
-
+    private final EnclosureSize enclosureSize;
 
     public Aviary(EnclosureSize enclosureSize) {
         this.enclosureSize = enclosureSize;
@@ -55,19 +51,4 @@ public class Aviary<K, V extends Animal> extends HashMap {
         System.out.println(AviaryMap.get(name));
     }
 
-    public final boolean equals(Aviary aviary) {
-        if (aviary == this)
-            return true;
-        if (aviary instanceof Map.Entry) {
-            Map.Entry<?, ?> e = (Map.Entry<?, ?>) aviary;
-            if (Objects.equals(k, e.getKey()) &&
-                    Objects.equals(k, e.getValue()))
-                return true;
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Objects.hashCode(k) ^ Objects.hashCode(v);
-    }
 }
