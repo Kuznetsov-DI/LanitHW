@@ -1,4 +1,4 @@
-import service.Kotik;
+import model.Kotik;
 
 public class Application {
 
