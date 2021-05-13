@@ -22,16 +22,19 @@ public class Calculator {
             throw new WrongOperation("Операция не поддерживается калькулятором", operation);
     }
 
-    public void innerNum () {
+    public void innerNum () throws InputMismatchException {
 
         Scanner in = new Scanner(System.in);
+        try {
+            System.out.println("Введите первое число, ВНИМАНИЕ, дробные числа вводятся через запятую!");
+            double one = in.nextDouble();
+            System.out.println("Введите второе число, ВНИМАНИЕ, дробные числа вводятся через запятую!");
+            double two = in.nextDouble();
 
-        System.out.println("Введите первое число, ВНИМАНИЕ, дробные числа вводятся через запятую!");
-        double one = in.nextDouble();
-        System.out.println("Введите второе число, ВНИМАНИЕ, дробные числа вводятся через запятую!");
-        double two = in.nextDouble();
-
-        math = new Math(one, two);;
+            math = new Math(one, two);;
+        } catch (InputMismatchException e) {
+            System.out.println("Число введено в НЕВЕРНОМ формате");
+        }
     }
 
     public void resultOperation () {
