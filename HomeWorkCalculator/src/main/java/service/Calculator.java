@@ -1,5 +1,8 @@
 package service;
 
+import exception.WrongOperation;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator {
@@ -7,11 +10,16 @@ public class Calculator {
     Math math;
     String operation;
 
-    public void innerOperation () {
+    public void innerOperation () throws WrongOperation {
 
         System.out.println("Введите одну из операций: +, -, *, /");
         Scanner in = new Scanner(System.in);
         operation = in.nextLine();
+        if (!((operation.equals("+"))
+                || (operation.equals("-"))
+                || (operation.equals("*"))
+                || (operation.equals("/"))))
+            throw new WrongOperation("Операция не поддерживается калькулятором", operation);
     }
 
     public void innerNum () {
@@ -23,8 +31,7 @@ public class Calculator {
         System.out.println("Введите второе число, ВНИМАНИЕ, дробные числа вводятся через запятую!");
         double two = in.nextDouble();
 
-        Math m = new Math(one, two);
-        math = m;
+        math = new Math(one, two);;
     }
 
     public void resultOperation () {
