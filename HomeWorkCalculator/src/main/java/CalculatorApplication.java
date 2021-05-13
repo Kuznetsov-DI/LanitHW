@@ -5,10 +5,13 @@ public class CalculatorApplication {
     public static void main(String[] args) throws WrongOperation {
 
         Calculator c = new Calculator();
+        String active = " ";
 
-        c.innerOperation();
-        c.innerNum();
-        c.resultOperation();
-
+        while (!(active.equals("N"))) {
+            c.innerOperation();
+            c.innerNum();
+            c.resultOperation();
+            active = c.closeConsole();
+        }
     }
 }

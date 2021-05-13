@@ -1,6 +1,7 @@
 package service;
 
 import exception.WrongOperation;
+import sun.security.mscapi.CPublicKey;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -54,5 +55,12 @@ public class Calculator {
             default:
                 System.out.println(operation + " - неверная операция!!!");
         }
+    }
+
+    public String closeConsole () {
+
+        System.out.println("Для завершения работы калькулятора введите 'N', для продолжения нажмите 'enter'");
+        Scanner in = new Scanner(System.in);
+        return in.nextLine();
     }
 }
