@@ -1,6 +1,8 @@
 package service;
 
 
+import exception.SecondArgumentIsNull;
+
 public class Math {
 
     private final double one;
@@ -31,7 +33,9 @@ public class Math {
         return this.one * this.two;
     }
 
-    public double subtraction (){
+    public double subtraction () throws SecondArgumentIsNull {
+
+        if (this.two == 0) throw new SecondArgumentIsNull("На ноль делить нельзя!", this.two);
         return this.one / this.two;
     }
 

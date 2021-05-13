@@ -1,7 +1,7 @@
 package service;
 
+import exception.SecondArgumentIsNull;
 import exception.WrongOperation;
-import sun.security.mscapi.CPublicKey;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -38,7 +38,7 @@ public class Calculator {
         }
     }
 
-    public void resultOperation () {
+    public void resultOperation () throws SecondArgumentIsNull {
         switch (operation) {
             case "+":
                 System.out.println(math.getOne() + " + " + math.getTwo() + " = " + math.sum());
