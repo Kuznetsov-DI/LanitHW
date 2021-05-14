@@ -6,7 +6,6 @@ import io.restassured.filter.log.LogDetail;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import org.example.model.Pet;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -53,7 +52,7 @@ public class ApiTest {
     public void checkObjectSave() {
         Pet pet = new Pet(); // создаём экземпляр POJO объекта Pet
         int id = new Random().nextInt(500000); // просто нужно создать произвольный айди
-        String name = "Pet_" + UUID.randomUUID(); // UUID гарантирует уникальность строки
+        String name = "Pet_" + UUID.randomUUID().toString(); // UUID гарантирует уникальность строки
         pet.setId(id);
         pet.setName(name);
 
