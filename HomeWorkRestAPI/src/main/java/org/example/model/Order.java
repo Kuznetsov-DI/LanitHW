@@ -3,7 +3,7 @@ package org.example.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Store {
+public class Order {
 
     @SerializedName("complete")
     private Boolean complete;
