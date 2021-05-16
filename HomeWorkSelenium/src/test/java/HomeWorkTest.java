@@ -6,16 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.JavascriptExecutor;
 
-import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class HomeWorkTest {
 
     private WebDriver driver;
-    private Map<String, Object> vars;
     JavascriptExecutor js;
 
     @BeforeEach
@@ -23,7 +20,6 @@ public class HomeWorkTest {
         System.setProperty("webdriver.chrome.driver", "E:\\EducationForMyself\\LANIT.Java\\chromedriver\\chromedriver.exe");
         driver = new ChromeDriver();
         js = (JavascriptExecutor) driver;
-        vars = new HashMap<String, Object>();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.avito.ru/");
         driver.manage().window().setSize(new Dimension(1382, 744));
@@ -46,7 +42,7 @@ public class HomeWorkTest {
         driver.findElement(By.cssSelector(".main-location-3j9by > .main-text-2PaZG")).click();
         driver.findElement(By.cssSelector(".suggest-input-3p8yi")).sendKeys("Владивосток");
         Thread.sleep(1000);// Задержка нужна, т.к. при написании города список не успевает обновиться
-            // под него и выбирает город по геопозоции
+        // под него и выбирает город по геопозоции
         driver.findElement(By.xpath("//li[@data-marker=\"suggest(0)\"]")).click();
         driver.findElement(By.cssSelector(".button-size-m-7jtw4")).click();
         js.executeScript("window.scrollTo(0,485)");
@@ -56,5 +52,20 @@ public class HomeWorkTest {
             WebElement dropdown = driver.findElement(By.cssSelector(".sort-select-3QxXG > .select-select-3CHiM"));
             dropdown.findElement(By.xpath("//option[. = 'Дороже']")).click();
         }
+
+        System.out.println(driver.findElement(By.xpath("//div[@data-marker=\"item\"][1]/div/div/div/a/h3"))
+                .getText() + " " +
+                driver.findElement(By.xpath("//div[@data-marker=\"item\"][1]/div/div/div/span/span/span"))
+                        .getText());
+
+        System.out.println(driver.findElement(By.xpath("//div[@data-marker=\"item\"][2]/div/div/div/a/h3"))
+                .getText() + " " +
+                driver.findElement(By.xpath("//div[@data-marker=\"item\"][2]/div/div/div/span/span/span"))
+                        .getText());
+
+        System.out.println(driver.findElement(By.xpath("//div[@data-marker=\"item\"][3]/div/div/div/a/h3"))
+                .getText() + " " +
+                driver.findElement(By.xpath("//div[@data-marker=\"item\"][3]/div/div/div/span/span/span"))
+                        .getText());
     }
 }
