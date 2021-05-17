@@ -54,10 +54,6 @@
                             <name>junit.jupiter.extensions.autodetection.enabled</name>
                             <value>true</value>
                         </property>
-                        <property>
-                            <name>allure.results.directory</name>
-                            <value>target/allure-results</value>
-                        </property>
                     </systemProperties>
                 </configuration>
                 <dependencies>

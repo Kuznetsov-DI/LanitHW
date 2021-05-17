@@ -35,7 +35,7 @@ public class HomeWorkTest {
         driver.findElement(By.id("category")).click();
         {
             WebElement dropdown = driver.findElement(By.id("category"));
-            Thread.sleep(1000);// Через mvn clean test не успевает грузиться список
+            Thread.sleep(2000);// Через mvn clean test не успевает грузиться список
             dropdown.findElement(By.xpath("//option[. = 'Оргтехника и расходники']")).click();
         }
         driver.findElement(By.id("search")).click();
