@@ -1,7 +1,7 @@
 package service;
 
 
-import exception.SecondArgumentIsNull;
+import exception.DivisionByZero;
 
 public class Math {
 
@@ -25,7 +25,7 @@ public class Math {
         return this.one + this.two;
     }
 
-    public double division (){
+    public double subtraction (){
         return this.one - this.two;
     }
 
@@ -33,9 +33,9 @@ public class Math {
         return this.one * this.two;
     }
 
-    public double subtraction () throws SecondArgumentIsNull {
+    public double division () throws DivisionByZero {
 
-        if (this.two == 0) throw new SecondArgumentIsNull("На ноль делить нельзя!", this.two);
+        if (this.two == 0) throw new DivisionByZero("На ноль делить нельзя!", this.two);
         return this.one / this.two;
     }
 

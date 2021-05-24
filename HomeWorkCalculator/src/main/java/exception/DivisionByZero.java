@@ -1,6 +1,6 @@
 package exception;
 
-public class SecondArgumentIsNull extends Exception {
+public class DivisionByZero extends Exception {
 
     private double zero;
 
@@ -8,7 +8,7 @@ public class SecondArgumentIsNull extends Exception {
         return zero;
     }
 
-    public SecondArgumentIsNull (String message, double o){
+    public DivisionByZero (String message, double o){
         super(message);
         zero = o;
     }

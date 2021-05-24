@@ -1,9 +1,9 @@
-import exception.SecondArgumentIsNull;
+import exception.DivisionByZero;
 import exception.WrongOperation;
 import service.Calculator;
 
 public class CalculatorApplication {
-    public static void main(String[] args) throws WrongOperation, SecondArgumentIsNull {
+    public static void main(String[] args) throws WrongOperation, DivisionByZero {
 
         Calculator c = new Calculator();
         String active = " ";

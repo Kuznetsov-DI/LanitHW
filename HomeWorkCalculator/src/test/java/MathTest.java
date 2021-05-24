@@ -1,4 +1,4 @@
-import exception.SecondArgumentIsNull;
+import exception.DivisionByZero;
 import service.Math;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -65,9 +65,9 @@ public class MathTest {
     }
 
     @Test (dataProvider = "testDivision")
-    public void testDivision (double one, double two, double three){
+    public void testSubtraction (double one, double two, double three){
         Math m = new Math(two,three);
-        Assert.assertEquals(one, m.division(), "Значение не равны!");
+        Assert.assertEquals(one, m.subtraction(), "Значение не равны!");
     }
 
     @Test (dataProvider = "testMultiplication")
@@ -77,18 +77,18 @@ public class MathTest {
     }
 
     @Test (dataProvider = "testSubtraction")
-    public void testSubtraction (double one, double two, double three) throws SecondArgumentIsNull {
+    public void testDivision (double one, double two, double three) throws DivisionByZero {
         Math m = new Math(two,three);
-        Assert.assertEquals(one, m.subtraction(), "Значение не равны!");
+        Assert.assertEquals(one, m.division(), "Значение не равны!");
     }
 
     @Test (
             dataProvider = "testSubtractionNegative",
-            expectedExceptions = SecondArgumentIsNull.class,
+            expectedExceptions = DivisionByZero.class,
             expectedExceptionsMessageRegExp = "На ноль делить нельзя!"
     )
-    public void testSubtractionNegative (double two, double three) throws SecondArgumentIsNull {
+    public void testDivisionNegative (double two, double three) throws DivisionByZero {
         Math m = new Math(two,three);
-        m.subtraction();
+        m.division();
     }
 }

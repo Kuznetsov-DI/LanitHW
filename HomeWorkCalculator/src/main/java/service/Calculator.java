@@ -1,6 +1,6 @@
 package service;
 
-import exception.SecondArgumentIsNull;
+import exception.DivisionByZero;
 import exception.WrongOperation;
 
 import java.util.InputMismatchException;
@@ -38,7 +38,7 @@ public class Calculator {
         }
     }
 
-    public void resultOperation () throws SecondArgumentIsNull {
+    public void resultOperation () throws DivisionByZero {
         switch (operation) {
             case "+":
                 System.out.println(math.getOne() + " + " + math.getTwo() + " = " + math.sum());
