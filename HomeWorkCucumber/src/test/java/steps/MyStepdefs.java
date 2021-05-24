@@ -2,6 +2,7 @@ package steps;
 
 import enums.Category;
 import enums.Sort;
+import io.cucumber.java.ParameterType;
 import io.cucumber.java.ru.Дано;
 import io.cucumber.java.ru.И;
 import io.cucumber.java.ru.Когда;
@@ -15,6 +16,16 @@ public class MyStepdefs {
 
     private WebDriver driver;
     JavascriptExecutor js;
+
+    @ParameterType(".*")
+    public Sort sort (String sort) {
+        return Sort.valueOf(sort);
+    }
+
+    @ParameterType(".*")
+    public Category category (String category) {
+        return Category.valueOf(category);
+    }
 
     @Дано("Открыть браузер")
     public void открытБраузер(){
@@ -30,7 +41,7 @@ public class MyStepdefs {
         driver.get("https://www.avito.ru/");
     }
 
-    @И("В выпадающем списке категорий выбрана {category>}")
+    @И("В выпадающем списке категорий выбрана {category}")
     public void вВыпадающемСпискеКатегорийВыбранаCategory( Category category) {
         driver.findElement(By.id("category")).click();
         {
@@ -39,16 +50,17 @@ public class MyStepdefs {
         }
     }
 
-    @И("В поле поиска введено значение <StringForSearch>")
-    public void вПолеПоискаВведеноЗначениеStringForSearch() {
+    @И("В поле поиска введено значение {string}")
+    public void вПолеПоискаВведеноЗначениеStringForSearch(String stringForSearch) {
+
     }
 
     @Тогда("Кликнуть по выпадающему списку региона")
     public void кликнутьПоВыпадающемуСпискуРегиона() {
     }
 
-    @Тогда("В поле регион ввести <city>")
-    public void вПолеРегионВвестиCity() {
+    @Тогда("В поле регион ввести {string}")
+    public void вПолеРегионВвестиCity(String city) {
     }
 
     @И("Нажата кнопка показать объявление")
