@@ -65,19 +65,34 @@ public class HomeTaskApiTest {
         assertEquals(actual.getPetId(), order.getPetId());
     }
 
+    @BeforeEach
 
     @Test
     public void deletedOrderFromStore() {
 
+        Order order = new Order();
+        int id = new Random().nextInt(5000);
+        int petId = new Random().nextInt(5000);
+
+        order.setId(id);
+        order.setPetId(petId);
+
         given()
-                .pathParam("id", System.getProperty("id"))
+                .body(order)
+                .when()
+                .post("/store/order")
+                .then()
+                .statusCode(200);
+
+        given()
+                .pathParam("id", id)
                 .when()
                 .delete("/store/order/{id}")
                 .then()
                 .statusCode(200);
 
         given()
-                .pathParam("id", System.getProperty("id"))
+                .pathParam("id", id)
                 .when()
                 .get("/store/order/{id}")
                 .then()
