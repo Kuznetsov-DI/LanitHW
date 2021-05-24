@@ -2,10 +2,10 @@ package enums;
 
 public enum Sort {
 
-    ПоУмолчанию("По умолчанию"),
-    Дешевле("Дешевле"),
-    Дороже("Дороже"),
-    ПоДате(" По дате");
+    поУмолчанию("По умолчанию"),
+    дешевле("Дешевле"),
+    дороже("Дороже"),
+    поДате(" По дате");
 
     public String value;
 
@@ -14,7 +14,7 @@ public enum Sort {
     }
 
 
-    Sort (String value) {
+    Sort(String value) {
         this.value = value;
     }
 }
