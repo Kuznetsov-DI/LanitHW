@@ -1,8 +1,6 @@
 # Default ignored files
 .idea
 *.iml
-<<<<<<< HEAD
 *.class
-=======
-*.class
->>>>>>> HW2
+*.allure
+*.properties
