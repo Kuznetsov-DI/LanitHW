@@ -7,6 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.interactions.Locatable;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -31,7 +34,7 @@ public class HomeWorkTest {
     }
 
     @Test
-    public void testHW() throws InterruptedException {
+    public void testHW() {
         driver.findElement(By.id("category")).click();
         {
             WebElement dropdown = driver.findElement(By.id("category"));
@@ -39,13 +42,16 @@ public class HomeWorkTest {
         }
         driver.findElement(By.id("search")).click();
         driver.findElement(By.id("search")).sendKeys("Принтер");
+        String paramForCity = "Владивосток";
         driver.findElement(By.cssSelector(".main-location-3j9by > .main-text-2PaZG")).click();
-        driver.findElement(By.cssSelector(".suggest-input-3p8yi")).sendKeys("Владивосток");
-        Thread.sleep(1000);// Задержка нужна, т.к. при написании города список не успевает обновиться
-        // под него и выбирает город по геопозоции
+        driver.findElement(By.cssSelector(".suggest-input-3p8yi")).sendKeys(paramForCity);
+        Boolean dynamicElement = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.textToBePresentInElementLocated
+                        (By.xpath("//li[@data-marker=\"suggest(0)\"]/span/span/span/strong"), paramForCity));
         driver.findElement(By.xpath("//li[@data-marker=\"suggest(0)\"]")).click();
         driver.findElement(By.cssSelector(".button-size-m-7jtw4")).click();
-        js.executeScript("window.scrollTo(0,485)");
+        WebElement checkDelivery = driver.findElement(By.xpath("//div[@data-marker=\"delivery-filter/container\"]"));
+        js.executeScript("arguments[0].scrollIntoView();", checkDelivery);
         driver.findElement(By.xpath("//div[@data-marker=\"delivery-filter/container\"]")).click();
         driver.findElement(By.cssSelector(".applyButton-root-1KoTq > .button-size-s-3-rn6")).click();
         {
@@ -53,19 +59,13 @@ public class HomeWorkTest {
             dropdown.findElement(By.xpath("//option[. = 'Дороже']")).click();
         }
 
-        System.out.println(driver.findElement(By.xpath("//div[@data-marker=\"item\"][1]/div/div/div/a/h3"))
-                .getText() + " " +
-                driver.findElement(By.xpath("//div[@data-marker=\"item\"][1]/div/div/div/span/span/span"))
-                        .getText());
+        for (int i =1; i < 4 ; i++) {
 
-        System.out.println(driver.findElement(By.xpath("//div[@data-marker=\"item\"][2]/div/div/div/a/h3"))
-                .getText() + " " +
-                driver.findElement(By.xpath("//div[@data-marker=\"item\"][2]/div/div/div/span/span/span"))
-                        .getText());
+            System.out.println(driver.findElement(By.xpath("//div[@data-marker=\"item\"][" + i + "]/div/div/div/a/h3"))
+                    .getText() + " " +
+                    driver.findElement(By.xpath("//div[@data-marker=\"item\"][" + i + "]/div/div/div/span/span/span"))
+                            .getText());
 
-        System.out.println(driver.findElement(By.xpath("//div[@data-marker=\"item\"][3]/div/div/div/a/h3"))
-                .getText() + " " +
-                driver.findElement(By.xpath("//div[@data-marker=\"item\"][3]/div/div/div/span/span/span"))
-                        .getText());
+        }
     }
 }
