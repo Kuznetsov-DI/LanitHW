@@ -1,5 +1,12 @@
 # Default ignored files
 .idea
+.allure
 *.iml
 *.class
 *.allure
+*.lst
+*.dumpstream
+*.dump
+*.json
+*.allure
+*.properties
