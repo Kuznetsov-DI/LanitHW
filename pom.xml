@@ -13,6 +13,8 @@
         <module>HomeWork2</module>
         <module>HomeWork3</module>
         <module>HomeWorkAllure</module>
+        <module>HomeWorkCalculator</module>
+        <module>HomeWorkSelenium</module
     </modules>
 
     <properties>

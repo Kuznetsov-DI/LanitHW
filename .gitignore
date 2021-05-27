@@ -7,3 +7,5 @@
 *.dumpstream
 *.dump
 *.json
+*.allure
+*.properties
