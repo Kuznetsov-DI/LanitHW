@@ -3,6 +3,7 @@
 .allure
 *.iml
 *.class
+*.allure
 *.lst
 *.dumpstream
 *.dump
