@@ -16,7 +16,7 @@
         <module>HomeWorkRestAPI</module>
         <module>HomeWorkAllure</module>
         <module>HomeWorkCalculator</module>
-        <module>HomeWorkSelenium</module
+        <module>HomeWorkSelenium</module>
     </modules>
 
     <properties>
